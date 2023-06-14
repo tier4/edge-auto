@@ -21,7 +21,7 @@ Before proceeding with [02_installation](./02_installation.md), install Ubuntu 2
 
 ## Jetson-based ECU
 
-** NOTE: BSP installation for ADLINK RQX-58G **
+**NOTE: BSP installation for ADLINK RQX-58G**
 
 Before proceeding with [02_installation](./02_installation.md), RQX-58G need to be properly configured according to the official quick start guide from ADLINK Technology, Inc. Please see the [official document](https://www.adlinktech.com/Products/Download.ashx?type=MDownload&isQuickStart=yes&file=1783%5croscube-x-bsp-qsg-l4t-32.5.0-kernel-1.0.8.pdf) in detail. To download the BSP image, please visit the ADLINK official page [here](https://www.adlinktech.com/Products/DownloadSoftware.aspx?lang=en&pdNo=1783&MainCategory=ROS2-Solution.aspx&kind=BS). (If you are accessing the site for the first time, you will be prompted to create an account.)
 
