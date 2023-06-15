@@ -8,6 +8,9 @@ NOTE: During this procedure, IP addresses are assigned to some network interface
 (refer to the connection diagram on [01_hardware_setup](01_hardware_setup.md) for more detail) using `netplan`.
 This behavior may cause unexpected disconnection if you are accessing the ECU remotely via those interfaces.
 
+If you would like to change network interfaces or IP addresses to be assigned,
+edit `edge-auto/ansible/playbooks/vars/edge_auto.yaml` before running `setup-dev-env.sh`
+
 ```sh
 git clone https://github.com/tier4/edge-auto.git
 cd edge-auto
