@@ -17,20 +17,34 @@ This following hardware configuration is used throughout this tutorial.
     - Camera: TIER IV Automotive HDR Camera C1 (x2)
     - LiDAR: HESAI Pandar XT32 (x1)
 
+### Connection diagram
+
 The figure below depicts the connection diagram between sensors and ECUs for this tutorial.
 This network configuration, including applying the IP addresses to the specific interface, will be automatically done during the steps in [2.Installation](./02_installation.md) page.
 
-**NOTE: Internet connection for 2. Installation step**
+**NOTE: Internet connection for 2.Installation step**
 
 The next [2.Installation](./02_installation.md) step requires the internet connection for git clone and ML model download.
 Please connect an Ethernet cable to the port indicated in the figure below for the internet connection.
 
 ![system connection example](connection.drawio.svg "system connection example")
 
+### Sensor driver
+
+Edge.Auto supports a variety of sensor types. The following repositories are used to make those sensors available in your ROS2 environment.
+Please refer to the each repositories for more details.
+
+- Camera driver
+  - [tier4/tier4_automotive_hdr_camera](https://github.com/tier4/tier4_automotive_hdr_camera): Kernel driver for using TIER IV cameras with Video4Linux2 interface.
+  - [tier4/ros2_v4l2_camera](https://github.com/tier4/ros2_v4l2_camera): ROS2 package for camera driver using Video4Linux2.
+- LIDAR driver
+  - [tier4/nebula](https://github.com/tier4/nebula): ROS2 package for unified ethernet-based LiDAR driver.
+- Sensor synchronization
+  - [tier4/sensor_trigger](https://github.com/tier4/sensor_trigger): ROS2 package for generating sensor trigger signals.
+
 ## 1-1. x86-based ECU
 
 Before proceeding with [2.Installation](./02_installation.md) step, install Ubuntu 22.04 to your x86-based ECU.
-
 
 ## 2-2. Jetson-based ECU
 
