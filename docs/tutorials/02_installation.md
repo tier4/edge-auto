@@ -2,6 +2,8 @@
 
 Setup for both x86-based and Jetson-based ECUs.
 
+**NOTE: Internet connection is required in this step**
+
 ## 2-1. x86-based ECU
 
 **NOTE: Network settings are automatically updated**
@@ -54,7 +56,7 @@ colcon build \
 
 ## 2-2. Jetson-based ECU
 
-**This following steps can be performed from your x86-based ECU via ssh. Besides, these steps require internet connection**
+**This following steps can be performed from your x86-based ECU via ssh**
 
 ### Download the repository and setup the environment
 
