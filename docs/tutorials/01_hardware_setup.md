@@ -22,7 +22,7 @@ This following hardware configuration is used throughout this tutorial.
 The figure below depicts the connection diagram between sensors and ECUs for this tutorial.
 This network configuration, including applying the IP addresses to the specific interface, will be automatically done during the steps in [2.Installation](./02_installation.md) page.
 
-**NOTE: Internet connection for 2.Installation step**
+**NOTE: Internet connection is required for 2.Installation step.**
 
 The next [2.Installation](./02_installation.md) step requires the internet connection for git clone and ML model download.
 Please connect an Ethernet cable to the port indicated in the figure below for the internet connection.

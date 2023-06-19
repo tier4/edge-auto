@@ -2,11 +2,11 @@
 
 Setup for both x86-based and Jetson-based ECUs.
 
-**NOTE: Internet connection is required in this step**
+**NOTE: Internet connection is required in this step.**
 
 ## 2-1. x86-based ECU
 
-**NOTE: Network settings are automatically updated**
+**NOTE: Network settings are automatically updated.**
 
 During this procedure, IP addresses are assigned to some network interfaces (refer to the connection diagram on [1.Hardware setup](01_hardware_setup.md) for more detail) using `netplan`.
 This behavior may cause unexpected disconnection, if you are accessing the ECU remotely via those interfaces.
@@ -112,3 +112,20 @@ If you want to update cloned repositories, use the following command.
 vcs import src < autoware.repos
 vcs pull src
 ```
+
+## Modify camera exposure timing
+
+**NOTE: On the sample system introduced in [1.Hardware setup](01_hardware_setup.md) step, this does not need to be changed.**
+
+If you want to change the exposure time of cameras for sensor synchronization, please modify the following files.
+
+```sh
+edge-auto-jetson/src/individual_params/individual_params/config/
+└── default
+    ├── camera0
+    │   ├── trigger.param.yaml
+    ├── camera1
+    │   ├── trigger.param.yaml
+```
+
+For more details, please refer to the [tier4/sensor_trigger](https://github.com/tier4/sensor_trigger) repository.
