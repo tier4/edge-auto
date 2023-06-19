@@ -54,7 +54,7 @@ colcon build \
 
 ## 2-2. Jetson-based ECU
 
-**This following steps can be performed from your x86-based ECU via ssh.**
+**This following steps can be performed from your x86-based ECU via ssh. Besides, these steps require internet connection**
 
 ### Download the repository and setup the environment
 
