@@ -27,7 +27,7 @@ This network configuration, including applying the IP addresses to the specific 
 The next [2.Installation](./02_installation.md) step requires the internet connection for git clone and ML model download.
 Please connect an Ethernet cable to the port indicated in the figure below for the internet connection.
 
-![system connection example](connection.drawio.svg "system connection example")
+![connection diagram of sample system](connection.drawio.svg "connection diagram of sample system")
 
 ### Sensor driver
 
@@ -41,6 +41,15 @@ Please refer to the each repositories for more details.
   - [tier4/nebula](https://github.com/tier4/nebula): ROS2 package for unified ethernet-based LiDAR driver.
 - Sensor synchronization
   - [tier4/sensor_trigger](https://github.com/tier4/sensor_trigger): ROS2 package for generating sensor trigger signals.
+
+### Sensor/ECU synchronization
+
+In this sample system, clock synchronization and timing synchronization between sensors and ECUs are realized to achieve highly accurate sensor fusion.
+The figure below depicts the synchronization design between sensors and ECUs in this sample system.
+
+For more details, please refer to the [tier4/sensor_trigger](https://github.com/tier4/sensor_trigger) repository.
+
+![synchronization design of sample system](synchronization.drawio.svg "synchronization design of sample system")
 
 ## 1-1. x86-based ECU
 
