@@ -47,11 +47,20 @@ vcs import src < autoware.repos
 Install ros package dependencies and build your ROS workspace.
 
 ```sh
+rosdep update
 rosdep install -y -r --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 
 colcon build \
   --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release \
   --packages-up-to edge_auto_launch
+
+...
+Finished <<< image_projection_based_fusion [0.25s]                    
+Starting >>> edge_auto_launch
+Finished <<< edge_auto_launch [0.22s]                  
+
+Summary: 66 packages finished [6.85s]
+  2 packages had stderr output: extrinsic_interactive_calibrator intrinsic_camera_calibrator
 ```
 
 ## 2-2. Jetson-based ECU
@@ -104,7 +113,7 @@ colcon build \
   --packages-up-to edge_auto_jetson_launch
 ```
 
-## Update your workspace
+## (Optional) Update your workspace
 
 If you want to update cloned repositories, use the following command.
 
@@ -113,7 +122,7 @@ vcs import src < autoware.repos
 vcs pull src
 ```
 
-## Modify camera exposure timing
+## (Optional) Modify camera exposure timing
 
 **NOTE: On the sample system introduced in [1.Hardware setup](01_hardware_setup.md) step, this does not need to be changed.**
 
