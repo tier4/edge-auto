@@ -42,3 +42,12 @@ in [autoware.universe](https://github.com/autowarefoundation/autoware.universe.g
 See the READMEs of these packages for more detail.
 
 In addition to the perception stack, this sample also launches viewers so that users can check perception results visually.
+
+As an example, the following picture shows the perception results in the case of a system configuration that consists of one AT128 and one C1 camera.
+
+![Example: perception result](../sample.png "Example: perception result")
+
+Note: The default models used in this tutorial are tuned for outdoor environments
+(especially for autonomous driving contexts).
+If you try this tutorial in some indoor environments, such as room ceil is in the range of sensor FoV, 
+additional preprocessings, such as cropping the range to be processed, may be required to get better results.
