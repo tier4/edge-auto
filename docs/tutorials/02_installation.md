@@ -50,9 +50,7 @@ Install ros package dependencies and build your ROS workspace.
 rosdep update
 rosdep install -y -r --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 
-colcon build \
-  --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release \
-  --packages-up-to edge_auto_launch
+./build.sh
 
 ...
 Finished <<< image_projection_based_fusion [0.25s]                    
@@ -115,10 +113,7 @@ vcs import src < autoware.repos
 Build your ROS workspace.
 
 ```sh
-colcon build \
-  --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release \
-  -DPython3_EXECUTABLE=$(which python3.6) -DCMAKE_CUDA_STANDARD=14 \
-  --packages-up-to edge_auto_jetson_launch
+./build.sh
 ```
 
 ## (Optional) Update your workspace
