@@ -86,12 +86,20 @@ If you already have the driver installed and want to skip this step, please type
 ./setup-dev-env.sh
 
 [Warning] Do you want to install/update the TIER IV camera driver? [y/N]:
+[Warning] Do you want to configure the network? This configuration may overwrite the IP address of the specific network interface [y/N]:
 ```
 
 Finally, please reboot the system to make the installed dependencies and permission settings effective.
 
 ```sh
 sudo reboot
+```
+
+If you chose `y` for the prompt of the network configuration,
+the IP address for the specified network interface is fixed (default: `192.168.2.2` for `eth1`).
+In that case, you can access the Jetson-based ECU and perform the following steps via remote access, such as:
+```sh
+ssh <IP_address> -l <username>
 ```
 
 ### Build edge-auto-jetson workspace
