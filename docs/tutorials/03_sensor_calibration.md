@@ -6,7 +6,19 @@ Estimate your intrinsic/extrinsic parameters on your sensor system using [tier4/
 
 ## 3-1. Calculate intrinsic parameters for cameras
 
-First, launch `calibration_intrinsic` to estimate your intrinsic parameters of your cameras.
+Before starting intrinsic parameters estimation, start camera streaming:
+```sh
+# optional: access Jetson-based ECU remotely
+ssh <IP_address(default: 192.168.2.2)> -l <username>
+
+# start camera streaming
+cd edge-auto-jetson
+source install/setup.bash
+
+ros2 launch edge_auto_jetson_launch edge_auto_jetson.launch.xml perception:=false
+```
+
+Then, launch `calibration_intrinsic` to estimate your intrinsic parameters of your cameras.
 See [this document](https://github.com/tier4/CalibrationTools/blob/tier4/universe/sensor/docs/how_to_intrinsic_camera.md) for detailed operation on the tool.
 
 
