@@ -29,6 +29,30 @@ source install/setup.bash
 ros2 launch edge_auto_launch calibration_intrinsic_sample.launch.xml
 ```
 
+On the first popup window, select `ROS topic` to perform calibration on live streaming camera data
+(In the case of using recorded data in ROSBAG, select `ROS bag`).
+Afterwards, select the appropriate board options and board parameters,  then click `Start`:
+
+![Example: the first popup of the intrinsics calibration tool](intrinsic_first_popup.png "Example: the first popup of the intrinsics calibration tool")
+
+On the second popup window, select the topic name of the camera you would like to perform intrinsics calibration.
+This tool can accept `compressed` topic as the target topic, and the compressed data would be preferred to save
+the network load of the system.
+Note that each topic on ROS 2 has its quality of service (QoS).
+If the actual QoS assigned by a publisher and  QoS(s) expected by subscribers are not acceptable combinations,
+the communication between them will not be issued properly. By default, edge-auto-jetson publishes
+sensor data with `BEST_EFFORT` QoS reliability, so here choose it on the drop down list.
+
+![Example: the second popup of the intrinsics calibration tool](intrinsic_second_popup.png "Example: the second popup of the intrinsics calibration tool")
+
+After data collection, click `calibrate` and wait until "Calibration status" turns into `idle`.
+If intrinsic parameters are estimated correctly, the reports of the estimation are displayed on
+some additional popup windows:
+
+![Example: after calculating intrinsics](intrinsic_after_calibration.png "Example: after calculating intrinsics")
+
+Repeat this step for all cameras in your system.
+
 Intrinsic parameters for all cameras consisting of your system (e.g., `camera0` and `camera1` in this tutorial)
 should be stored on `individual_params`.
 After acquiring the files, put them in appropriate folder on your **Jetson-based ECU** so that they are loaded and published as `camera_info` topics:
@@ -47,9 +71,10 @@ edge-auto-jetson/src/individual_params/individual_params/config/
 
 ```
 
-## 3-2. (HESAI AT128 only) Get a correction file from LiDAR
 
-HESAI AT128 have the capability to access their own correction file stored inside them.
+## 3-2. (Optional) Get a correction file from LiDAR
+
+Some product series of LiDARs, including HESAI AT128, have the capability to access their own correction file stored inside them.
 To get better results, you are encouraged to download the correction file from individual LiDAR, and store it in appropriate folder on the x86-based ECU:
 
 ```sh
