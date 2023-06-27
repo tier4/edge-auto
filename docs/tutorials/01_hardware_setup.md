@@ -29,6 +29,8 @@ Please connect an Ethernet cable to the port indicated in the figure below for t
 
 ![connection diagram of sample system](connection.drawio.svg "connection diagram of sample system")
 
+**NOTE: Try other display port if nothing is shown on the display.**
+
 ### Sensor driver
 
 Edge.Auto supports a variety of sensor types. The following repositories are used to make those sensors available in your ROS2 environment.
