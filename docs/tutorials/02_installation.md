@@ -7,7 +7,7 @@ Setup for both x86-based and Jetson-based ECUs.
 
 ## 2-1. x86-based ECU
 
-> **Note**
+> **Warning**
 > Network settings are automatically updated.
 
 During this procedure, IP addresses are assigned to some network interfaces (refer to the connection diagram on [1.Hardware setup](01_hardware_setup.md) for more detail) using `netplan`.
@@ -65,7 +65,8 @@ Summary: 66 packages finished [6.85s]
 
 ## 2-2. Jetson-based ECU
 
-**This following steps can be performed from your x86-based ECU via ssh**
+> **Note**
+> This following steps can be performed from your x86-based ECU via ssh.
 
 ### Download the repository and setup the environment
 
@@ -131,7 +132,7 @@ vcs pull src
 ## (Optional) Modify camera exposure timing
 
 > **Note**
-> On the sample system introduced in [1.Hardware setup](01_hardware_setup.md) step, this doenot need to be changed.**
+> On the sample system introduced in [1.Hardware setup](01_hardware_setup.md) step, this doesn't need to be changed.
 
 If you want to change the exposure time of cameras for sensor synchronization, please modify the following files.
 

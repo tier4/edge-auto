@@ -24,14 +24,14 @@ This network configuration, including applying the IP addresses to the specific 
 
 > **Note**
 > Internet connection is required for 2.Installation step.
-
-The next [2.Installation](./02_installation.md) step requires the internet connection for git clone and ML model download.
-Please connect an Ethernet cable to the port indicated in the figure below for the internet connection.
-
-![connection diagram of sample system](figures/connection.drawio.svg "connection diagram of sample system")
+> 
+> The next [2.Installation](./02_installation.md) step requires the internet connection for git clone and ML model download.
+> Please connect an Ethernet cable to the port indicated in the figure below for the internet connection.
 
 > **Note**
 > Try other display port if nothing is shown on the display.
+
+![connection diagram of sample system](figures/connection.drawio.svg "connection diagram of sample system")
 
 ### Sensor driver
 
@@ -65,8 +65,10 @@ Before proceeding with [2.Installation](./02_installation.md) step, install NVID
 
 > **Note**
 > BSP installation for ADLINK RQX-58G
+> 
 > RQX-58G need to be properly configured according to the official quick start guide from ADLINK Technology, Inc.
 > Please see the [official document](https://www.adlinktech.com/Products/Download.ashx?type=MDownload&isQuickStart=yes&file=1783%5croscube-x-bsp-qsg-l4t-32.5.0-kernel-1.0.8.pdf) in detail.
+> 
 > To download the BSP image, please visit the ADLINK official page [here](https://www.adlinktech.com/Products/DownloadSoftware.aspx?lang=en&pdNo=1783&MainCategory=ROS2-Solution.aspx&kind=BS). (If you are accessing the site for the first time, you will be prompted to create an account.)
 
 While TIER IV camera driver ([tier4/tier4_automotive_hdr_camera](https://github.com/tier4/tier4_automotive_hdr_camera)) is included in the RQX-58G BSP official image, you can also update it during the following setup process.
