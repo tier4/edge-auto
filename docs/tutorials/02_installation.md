@@ -11,11 +11,11 @@ Setup for both x86-based and Jetson-based ECUs.
 > **Warning**
 >
 > Network settings are automatically updated.
-
-During this procedure, IP addresses are assigned to some network interfaces (refer to the connection diagram on [1.Hardware setup](01_hardware_setup.md) for more detail) using `netplan`.
-This behavior may cause unexpected disconnection, if you are accessing the ECU remotely via those interfaces.
-
-If you would like to change network interfaces or IP addresses to be assigned, edit `edge-auto/ansible/playbooks/vars/edge_auto.yaml` before running `setup-dev-env.sh`
+>
+> During this procedure, IP addresses are assigned to some network interfaces (refer to the connection diagram on [1.Hardware setup](01_hardware_setup.md) for more detail) using `netplan`.
+> This behavior may cause unexpected disconnection, if you are accessing the ECU remotely via those interfaces.
+>
+> If you would like to change network interfaces or IP addresses to be assigned, edit `edge-auto/ansible/playbooks/vars/edge_auto.yaml` before running `setup-dev-env.sh`
 
 ### Download the repository and setup your environment
 
