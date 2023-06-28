@@ -3,11 +3,13 @@
 Setup for both x86-based and Jetson-based ECUs.
 
 > **Note**
+>
 > Internet connection is required in this step.
 
 ## 2-1. x86-based ECU
 
 > **Warning**
+>
 > Network settings are automatically updated.
 
 During this procedure, IP addresses are assigned to some network interfaces (refer to the connection diagram on [1.Hardware setup](01_hardware_setup.md) for more detail) using `netplan`.
@@ -66,6 +68,7 @@ Summary: 66 packages finished [6.85s]
 ## 2-2. Jetson-based ECU
 
 > **Note**
+>
 > This following steps can be performed from your x86-based ECU via ssh.
 
 ### Download the repository and setup the environment
@@ -82,6 +85,7 @@ During the installation process, you will be asked if you want to install the TI
 If you already have the driver installed and want to skip this step, please type `N` to continue.
 
 > **Note**
+>
 > `setup-dev-env.sh` script may take several hours.
 
 ```sh
@@ -132,6 +136,7 @@ vcs pull src
 ## (Optional) Modify camera exposure timing
 
 > **Note**
+>
 > On the sample system introduced in [1.Hardware setup](01_hardware_setup.md) step, this doesn't need to be changed.
 
 If you want to change the exposure time of cameras for sensor synchronization, please modify the following files.
