@@ -19,7 +19,7 @@ This following hardware configuration is used throughout this tutorial.
 
 ### Connection diagram
 
-The figure below depicts the connection diagram between sensors and ECUs for this tutorial.
+The figures below depicts the connection diagram between sensors and ECUs for this tutorial.
 This network configuration, including applying the IP addresses to the specific interface, will be automatically done during the steps in [2.Installation](./02_installation.md) page.
 
 > **Note**
@@ -34,6 +34,8 @@ This network configuration, including applying the IP addresses to the specific 
 > Try other display port if nothing is shown on the display.
 
 ![connection diagram of sample system](figures/connection.drawio.svg "connection diagram of sample system")
+
+![hardware setup of sample system](figures/hardware_setup.png "hardware setup of sample system")
 
 ### Sensor driver
 
