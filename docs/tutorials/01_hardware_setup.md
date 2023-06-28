@@ -27,7 +27,7 @@ This network configuration, including applying the IP addresses to the specific 
 The next [2.Installation](./02_installation.md) step requires the internet connection for git clone and ML model download.
 Please connect an Ethernet cable to the port indicated in the figure below for the internet connection.
 
-![connection diagram of sample system](connection.drawio.svg "connection diagram of sample system")
+![connection diagram of sample system](figures/connection.drawio.svg "connection diagram of sample system")
 
 **NOTE: Try other display port if nothing is shown on the display.**
 
@@ -51,7 +51,7 @@ The figure below depicts the synchronization design between sensors and ECUs in 
 
 For more details, please refer to the [tier4/sensor_trigger](https://github.com/tier4/sensor_trigger) repository.
 
-![synchronization design of sample system](synchronization.drawio.svg "synchronization design of sample system")
+![synchronization design of sample system](figures/synchronization.drawio.svg "synchronization design of sample system")
 
 ## 1-1. x86-based ECU
 

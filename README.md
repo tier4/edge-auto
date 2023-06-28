@@ -14,7 +14,7 @@ As a sample application, the following images show object recognition results us
 
 This repository is based on a natively built ROS2 environment. The sample system overview is shown below.
 
-![system overview](docs/tutorials/connection.drawio.svg "edge-auto overview")
+![system overview](docs/tutorials/figures/connection.drawio.svg "edge-auto overview")
 
 ### System Requirement
 

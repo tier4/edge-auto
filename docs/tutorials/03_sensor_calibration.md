@@ -33,7 +33,7 @@ On the first popup window, select `ROS topic` to perform calibration on live str
 (In the case of using recorded data in ROSBAG, select `ROS bag`).
 Afterwards, select the appropriate board options and board parameters,  then click `Start`:
 
-![Example: the first popup of the intrinsics calibration tool](intrinsic_first_popup.png "Example: the first popup of the intrinsics calibration tool")
+![Example: the first popup of the intrinsics calibration tool](figures/intrinsic_first_popup.png "Example: the first popup of the intrinsics calibration tool")
 
 On the second popup window, select the topic name of the camera you would like to perform intrinsics calibration.
 This tool can accept `compressed` topic as the target topic, and the compressed data would be preferred to save
@@ -43,13 +43,13 @@ If the actual QoS assigned by a publisher and  QoS(s) expected by subscribers ar
 the communication between them will not be issued properly. By default, edge-auto-jetson publishes
 sensor data with `BEST_EFFORT` QoS reliability, so here choose it on the drop down list.
 
-![Example: the second popup of the intrinsics calibration tool](intrinsic_second_popup.png "Example: the second popup of the intrinsics calibration tool")
+![Example: the second popup of the intrinsics calibration tool](figures/intrinsic_second_popup.png "Example: the second popup of the intrinsics calibration tool")
 
 After data collection, click `calibrate` and wait until "Calibration status" turns into `idle`.
 If intrinsic parameters are estimated correctly, the reports of the estimation are displayed on
 some additional popup windows:
 
-![Example: after calculating intrinsics](intrinsic_after_calibration.png "Example: after calculating intrinsics")
+![Example: after calculating intrinsics](figures/intrinsic_after_calibration.png "Example: after calculating intrinsics")
 
 Repeat this step for all cameras in your system.
 
