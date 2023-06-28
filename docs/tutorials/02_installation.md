@@ -2,11 +2,13 @@
 
 Setup for both x86-based and Jetson-based ECUs.
 
-**NOTE: Internet connection is required in this step.**
+> **Note**
+> Internet connection is required in this step.
 
 ## 2-1. x86-based ECU
 
-**NOTE: Network settings are automatically updated.**
+> **Note**
+> Network settings are automatically updated.
 
 During this procedure, IP addresses are assigned to some network interfaces (refer to the connection diagram on [1.Hardware setup](01_hardware_setup.md) for more detail) using `netplan`.
 This behavior may cause unexpected disconnection, if you are accessing the ECU remotely via those interfaces.
@@ -53,9 +55,9 @@ rosdep install -y -r --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 ./build.sh
 
 ...
-Finished <<< image_projection_based_fusion [0.25s]                    
+Finished <<< image_projection_based_fusion [0.25s]
 Starting >>> edge_auto_launch
-Finished <<< edge_auto_launch [0.22s]                  
+Finished <<< edge_auto_launch [0.22s]
 
 Summary: 66 packages finished [6.85s]
   2 packages had stderr output: extrinsic_interactive_calibrator intrinsic_camera_calibrator
@@ -78,7 +80,8 @@ You can install the dependencies using the provided ansible script.
 During the installation process, you will be asked if you want to install the TIER IV camera driver.
 If you already have the driver installed and want to skip this step, please type `N` to continue.
 
-**NOTE: `setup-dev-env.sh` script may take several hours.**
+> **Note**
+> `setup-dev-env.sh` script may take several hours.
 
 ```sh
 ./setup-dev-env.sh
@@ -127,7 +130,8 @@ vcs pull src
 
 ## (Optional) Modify camera exposure timing
 
-**NOTE: On the sample system introduced in [1.Hardware setup](01_hardware_setup.md) step, this does not need to be changed.**
+> **Note**
+> On the sample system introduced in [1.Hardware setup](01_hardware_setup.md) step, this doenot need to be changed.**
 
 If you want to change the exposure time of cameras for sensor synchronization, please modify the following files.
 

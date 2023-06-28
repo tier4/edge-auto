@@ -4,7 +4,8 @@ Launch the perception application implemented in [autoware.universe](https://git
 
 ## 4-1. Jetson-based ECU
 
-**NOTE: This following steps can be performed from your x86-based ECU via ssh.**
+> **Note**
+> This following steps can be performed from your x86-based ECU via ssh.
 
 The following sample launches image-based object detection performed on two cameras individually.
 
