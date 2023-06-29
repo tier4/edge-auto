@@ -1,73 +1,69 @@
 repositories:
-  autoware.universe:
-    type: git
-    url: https://github.com/autowarefoundation/autoware.universe.git
-    version: main
-  autoware_common:
-    type: git
-    url: https://github.com/autowarefoundation/autoware_common.git
-    version: main
-  autoware_msgs:
-    type: git
-    url: https://github.com/autowarefoundation/autoware_msgs.git
-    version: main
-  autoware_adapi_msgs:
-    type: git
-    url: https://github.com/autowarefoundation/autoware_adapi_msgs.git
-    version: main
-  autoware_auto_msgs:
-    type: git
-    url: https://github.com/tier4/autoware_auto_msgs.git
-    version: tier4/main
-  autoware.universe:
-    type: git
-    url: https://github.com/autowarefoundation/autoware.universe.git
-    version: main
-  tier4_autoware_msgs:
-    type: git
-    url: https://github.com/tier4/tier4_autoware_msgs.git
-    version: tier4/universe
-  launcher:
-    type: git
-    url: https://github.com/tier4/edge_auto_launch.git
-    version: main
-  individual_params:
-    type: git
-    url: https://github.com/tier4/edge_auto_individual_params.git
-    version: main
-  calibration_tools:
-    type: git
-    url: https://github.com/tier4/CalibrationTools.git
-    version: tier4/universe
-  nebula:
-    type: git
-    url: https://github.com/tier4/nebula.git
-    version: main
-  transport_drivers:
-    type: git
-    url: https://github.com/MapIV/transport_drivers.git
-    version: tcp
-  lidartag:
-    type: git
-    url: https://github.com/tier4/LiDARTag.git
-    version: humble
-  lidartag_msgs:
-    type: git
-    url: https://github.com/tier4/LiDARTag_msgs.git
-    version: tier4/universe
   apriltag_msgs:
     type: git
     url: https://github.com/christianrauch/apriltag_msgs.git
-    version: 2.0.0
+    version: 3e0cbf1c2ac85f78ca097b652cb3c33db1673d24
   apriltag_ros:
     type: git
     url: https://github.com/christianrauch/apriltag_ros.git
     version: e814e9e5d5f1bfb60a4aa685d30977c632bbc540
-  ros2_numpy:
+  autoware.universe:
     type: git
-    url: https://github.com/Box-Robotics/ros2_numpy.git
-    version: humble
+    url: https://github.com/autowarefoundation/autoware.universe.git
+    version: 9c30691e6b6f6b6dbdb9d54427b8f4e6e3f44df3
+  autoware_adapi_msgs:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_adapi_msgs.git
+    version: 7cd80335ad1a4edc1955de5062dd5a4bd9d4de7b
+  autoware_auto_msgs:
+    type: git
+    url: https://github.com/tier4/autoware_auto_msgs.git
+    version: e1795354161ed54d66659366262578863bd2b862
+  autoware_common:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_common.git
+    version: 536b628d6cc87ddf877efb351ff9d38f12fec620
+  autoware_msgs:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_msgs.git
+    version: 52a856d29601860413e4261079e0bf9205c737d1
+  calibration_tools:
+    type: git
+    url: https://github.com/tier4/CalibrationTools.git
+    version: ab1ef40b2e87243d6614261276033011393f9815
   image_pipeline:
     type: git
     url: https://github.com/tier4/image_pipeline.git
     version: 47964112293eb19f9f57254b2e6b68706954cc63
+  individual_params:
+    type: git
+    url: https://github.com/tier4/edge_auto_individual_params.git
+    version: 508176e19cbe5aaeee5b695ce200cfd88e28c6ff
+  launcher:
+    type: git
+    url: https://github.com/tier4/edge_auto_launch.git
+    version: 91e273efa6a30f0ad16940427c5c410f74405c35
+  lidartag:
+    type: git
+    url: https://github.com/tier4/LiDARTag.git
+    version: f191b3379a78b0b1cd0076704ca8171ba92d7923
+  lidartag_msgs:
+    type: git
+    url: https://github.com/tier4/LiDARTag_msgs.git
+    version: a8e94d97270969aed14c5d83729068865454a9f9
+  nebula:
+    type: git
+    url: https://github.com/tier4/nebula.git
+    version: 427409a950bcca9646a6c8c3fc10cdf44e6886a2
+  ros2_numpy:
+    type: git
+    url: https://github.com/Box-Robotics/ros2_numpy.git
+    version: 780ef66b7e800bf278c6f72b82f821cc542eed7d
+  tier4_autoware_msgs:
+    type: git
+    url: https://github.com/tier4/tier4_autoware_msgs.git
+    version: 8642c41dd555cb39c3e6f0049c216ffe72bbd967
+  transport_drivers:
+    type: git
+    url: https://github.com/MapIV/transport_drivers.git
+    version: d1e413482ca93c7618b005459a6a42e78e895442
