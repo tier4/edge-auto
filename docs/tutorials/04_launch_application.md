@@ -53,3 +53,14 @@ Note: The default models used in this tutorial are tuned for outdoor environment
 (especially for autonomous driving contexts).
 If you try this tutorial in some indoor environments, such as room ceil is in the range of sensor FoV, 
 additional preprocessings, such as cropping the range to be processed, may be required to get better results.
+
+## (Experimental) Launch lightNet-TRT
+
+To launch lightNet-TRT, run the following command.
+
+```sh
+cd edge-auto-jetson
+source install/setup.bash
+
+ros2 launch tensorrt_lightnet tensorrt_lightnet.launch.xml
+```
