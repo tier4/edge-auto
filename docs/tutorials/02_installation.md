@@ -157,6 +157,7 @@ For more details, please refer to the [tier4/sensor_trigger](https://github.com/
 You can install lightNet-TRT using the following command.
 
 ```sh
+sudo apt install libgflags-dev
 vcs import src < experimental.repos
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-up-to tensorrt_lightnet
 ```
