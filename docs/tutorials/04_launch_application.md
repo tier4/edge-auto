@@ -62,5 +62,5 @@ To launch lightNet-TRT, run the following command.
 cd edge-auto-jetson
 source install/setup.bash
 
-ros2 launch tensorrt_lightnet tensorrt_lightnet.launch.xml
+ros2 launch tensorrt_lightnet tensorrt_lightnet.launch.xml tensorrt_lightnet_is_installed:=true
 ```
