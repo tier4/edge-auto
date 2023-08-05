@@ -160,7 +160,7 @@ You can install lightNet-TRT using the following command.
 vcs import src < experimental.repos
 
 rosdep update
-rosdep install -y -r --from-paths src --ignore-src --rosdistro $ROS_DISTRO
+rosdep install -y -r --from-paths src/tensorrt_lightnet --ignore-src --rosdistro $ROS_DISTRO
 
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-up-to tensorrt_lightnet
 ```
