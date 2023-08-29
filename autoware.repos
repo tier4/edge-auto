@@ -1,73 +1,106 @@
 repositories:
-  autoware.universe:
-    type: git
-    url: https://github.com/autowarefoundation/autoware.universe.git
-    version: main
-  autoware_common:
-    type: git
-    url: https://github.com/autowarefoundation/autoware_common.git
-    version: main
-  autoware_msgs:
+  # core
+  core/autoware_msgs:
     type: git
     url: https://github.com/autowarefoundation/autoware_msgs.git
     version: main
-  autoware_adapi_msgs:
+  core/autoware_adapi_msgs:
     type: git
     url: https://github.com/autowarefoundation/autoware_adapi_msgs.git
     version: main
-  autoware_auto_msgs:
+  core/autoware_common:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_common.git
+    version: main
+  core/external/autoware_auto_msgs:
     type: git
     url: https://github.com/tier4/autoware_auto_msgs.git
     version: tier4/main
-  autoware.universe:
+  # universe
+  universe/autoware.universe:
     type: git
     url: https://github.com/autowarefoundation/autoware.universe.git
     version: main
-  tier4_autoware_msgs:
+  universe/external/tier4_ad_api_adaptor: # TODO(TIER IV): Improve design/code and transfer to AWF
+    type: git
+    url: https://github.com/tier4/tier4_ad_api_adaptor.git
+    version: tier4/universe
+  universe/external/tier4_autoware_msgs:
     type: git
     url: https://github.com/tier4/tier4_autoware_msgs.git
     version: tier4/universe
-  launcher:
+  universe/external/morai_msgs:
     type: git
-    url: https://github.com/tier4/edge_auto_launch.git
+    url: https://github.com/MORAI-Autonomous/MORAI-ROS2_morai_msgs.git
     version: main
-  individual_params:
+  universe/external/muSSP:
     type: git
-    url: https://github.com/tier4/edge_auto_individual_params.git
+    url: https://github.com/tier4/muSSP.git
+    version: tier4/main
+  universe/external/ndt_omp:
+    type: git
+    url: https://github.com/tier4/ndt_omp.git
+    version: tier4/main
+  universe/external/eagleye:
+    type: git
+    url: https://github.com/MapIV/eagleye.git
+    version: autoware-main
+  universe/external/rtklib_ros_bridge:
+    type: git
+    url: https://github.com/MapIV/rtklib_ros_bridge.git
+    version: ros2-v0.1.0
+  universe/external/llh_converter:
+    type: git
+    url: https://github.com/MapIV/llh_converter.git
+    version: ros2
+  # launcher
+  launcher/autoware_launch:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_launch.git
     version: main
-  calibration_tools:
-    type: git
-    url: https://github.com/tier4/CalibrationTools.git
-    version: tier4/universe
-  nebula:
+  # sensor_component
+  sensor_component/external/nebula:
     type: git
     url: https://github.com/tier4/nebula.git
     version: main
-  transport_drivers:
+  sensor_component/external/transport_drivers:
     type: git
     url: https://github.com/MapIV/transport_drivers.git
     version: boost
-  lidartag:
+  # edge auto
+  edge_auto/launcher:
+    type: git
+    url: https://github.com/tier4/edge_auto_launch.git
+    version: main
+  edge_auto/individual_params:
+    type: git
+    url: https://github.com/tier4/edge_auto_individual_params.git
+    version: main
+  dependencies/calibration_tools:
+    type: git
+    url: https://github.com/tier4/CalibrationTools.git
+    version: tier4/universe
+  dependencies/lidartag:
     type: git
     url: https://github.com/tier4/LiDARTag.git
     version: humble
-  lidartag_msgs:
+  dependencies/lidartag_msgs:
     type: git
     url: https://github.com/tier4/LiDARTag_msgs.git
     version: tier4/universe
-  apriltag_msgs:
+  dependencies/apriltag_msgs:
     type: git
     url: https://github.com/christianrauch/apriltag_msgs.git
     version: 2.0.0
-  apriltag_ros:
+  dependencies/apriltag_ros:
     type: git
     url: https://github.com/christianrauch/apriltag_ros.git
     version: e814e9e5d5f1bfb60a4aa685d30977c632bbc540
-  ros2_numpy:
+  dependencies/ros2_numpy:
     type: git
     url: https://github.com/Box-Robotics/ros2_numpy.git
     version: humble
-  image_pipeline:
+  dependencies/image_pipeline:
     type: git
     url: https://github.com/tier4/image_pipeline.git
     version: 47964112293eb19f9f57254b2e6b68706954cc63
