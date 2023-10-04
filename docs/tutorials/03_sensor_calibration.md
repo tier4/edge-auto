@@ -101,6 +101,11 @@ ros2 launch edge_auto_launch calibration_extrinsic_at128_sample.launch.xml
 ros2 launch edge_auto_launch calibration_extrinsic_xt32_sample.launch.xml
 ```
 
+After executing the above launch file, two windows will be appear like below:
+![Example: overview of extrinsic calibration tool](figures/extrinsic.png "Example: overview of extrinsic calibration tool")
+
+You do not need to click any points on the RViz window (i.e., the left-hand window in the figure above). If calibration targets are recognized correctly, markers will appear automatically.
+
 To perform sensor fusion, pose relationships (i.e., extrinsic parameters) between all fused sensors need to be registered in `TF`, which is the ROS-fashion to represent the relationships.
 
 NOTE: In these sample, there is the assumption that all sensors are fixed and their relative positions do not change.
