@@ -52,6 +52,8 @@ Install ros package dependencies and build your ROS workspace.
 
 ```sh
 rosdep update
+rosdep install -y --from-paths `colcon list --packages-up-to edge_auto_launch -p` --ignore-src --skip-keys autoware_launch
+
 ./build.sh
 
 ...
