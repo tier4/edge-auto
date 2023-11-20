@@ -1,9 +1,11 @@
 - name: Create data directory
+  become: true
   ansible.builtin.file:
     path: "{{ data_dir }}"
     state: directory
 
 - name: Create lidar_centerpoint directory inside {{ data_dir }}
+  become: true
   ansible.builtin.file:
     path: "{{ data_dir }}/lidar_centerpoint"
     mode: "755"
