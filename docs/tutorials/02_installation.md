@@ -151,16 +151,3 @@ edge-auto-jetson/src/individual_params/individual_params/config/
 ```
 
 For more details, please refer to the [tier4/sensor_trigger](https://github.com/tier4/sensor_trigger) repository.
-
-## (Experimental) Install lightNet-TRT
-
-You can install lightNet-TRT using the following command.
-
-```sh
-vcs import src < experimental.repos
-
-rosdep update
-rosdep install -y -r --from-paths src/tensorrt_lightnet --ignore-src --rosdistro $ROS_DISTRO
-
-colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-up-to tensorrt_lightnet
-```

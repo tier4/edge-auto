@@ -54,13 +54,14 @@ Note: The default models used in this tutorial are tuned for outdoor environment
 If you try this tutorial in some indoor environments, such as room ceil is in the range of sensor FoV, 
 additional preprocessings, such as cropping the range to be processed, may be required to get better results.
 
-## (Experimental) Launch lightNet-TRT
+## (Experimental) Launch experimental repositories
 
-To launch lightNet-TRT, run the following command.
+You can checkout experimental repositories using the following command.
 
 ```sh
-cd edge-auto-jetson
-source install/setup.bash
-
-ros2 launch edge_auto_jetson_launch edge_auto_jetson.launch.xml tensorrt_lightnet_is_installed:=true
+vcs import src < experimental.repos
 ```
+
+For building and launching experimental repositories, please refer to the documentation provided in each respective repository.
+
+- [lightNet-TRT](https://github.com/daniel89710/lightNet-TRT)
