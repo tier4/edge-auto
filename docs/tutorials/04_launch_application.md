@@ -64,4 +64,4 @@ vcs import src < experimental.repos
 
 For building and launching experimental repositories, please refer to the documentation provided in each respective repository.
 
-- [lightNet-TRT](https://github.com/daniel89710/lightNet-TRT)
+- [lightNet-TRT](https://github.com/kminoda/lightNet-TRT-ROS2)
