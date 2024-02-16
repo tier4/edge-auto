@@ -59,3 +59,15 @@ Note: The default models used in this tutorial are tuned for outdoor environment
 (especially for autonomous driving contexts).
 If you try this tutorial in some indoor environments, such as room ceil is in the range of sensor FoV, 
 additional preprocessings, such as cropping the range to be processed, may be required to get better results.
+
+## (Experimental) Launch experimental repositories
+
+You can checkout experimental repositories using the following command.
+
+```sh
+vcs import src < experimental.repos
+```
+
+For building and launching experimental repositories, please refer to the documentation provided in each respective repository.
+
+- [lightNet-TRT](https://github.com/kminoda/lightNet-TRT-ROS2)
