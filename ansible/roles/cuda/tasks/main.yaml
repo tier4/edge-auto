@@ -8,22 +8,6 @@
   register: cuda_architecture
   changed_when: false
 
-- name: (tmp for Ubuntu 22.04) Add liburcu6 repository into sources.list for amd64
-  become: true
-  ansible.builtin.apt_repository:
-    repo: deb http://archive.ubuntu.com/ubuntu focal main restricted
-    filename: focal
-    state: present
-  when: cuda_architecture.stdout == "x86_64"
-
-- name: (tmp for Ubuntu 22.04) Add liburcu6 repository into sources.list for arm64
-  become: true
-  ansible.builtin.apt_repository:
-    repo: deb http://ports.ubuntu.com/ubuntu-ports focal main restricted
-    filename: focal
-    state: present
-  when: cuda_architecture.stdout == "aarch64"
-
 - name: Remove old /etc/apt/sources.list.d/cuda.list
   become: true
   ansible.builtin.file:
@@ -33,7 +17,7 @@
 - name: Install CUDA keyring
   become: true
   ansible.builtin.apt:
-    deb: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/{{ cuda_architecture.stdout }}/cuda-keyring_1.0-1_all.deb
+    deb: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/{{ cuda_architecture.stdout }}/cuda-keyring_1.1-1_all.deb
     update_cache: true
 
 - name: Get dash-case name of cuda_version
@@ -41,21 +25,37 @@
   register: cuda__dash_case_cuda_version
   changed_when: false
 
+- name: Install CUDA devel libraries except for cuda-drivers
+  become: true
+  ansible.builtin.apt:
+    name:
+      - cuda-command-line-tools-{{ cuda__dash_case_cuda_version.stdout }}
+      - cuda-minimal-build-{{ cuda__dash_case_cuda_version.stdout }}
+      - libcusparse-dev-{{ cuda__dash_case_cuda_version.stdout }}
+      - libcublas-dev-{{ cuda__dash_case_cuda_version.stdout }}
+      - libcurand-dev-{{ cuda__dash_case_cuda_version.stdout }}
+      - cuda-nvml-dev-{{ cuda__dash_case_cuda_version.stdout }}
+    update_cache: true
+  when: install_devel == 'y'
+
 - name: Install CUDA libraries except for cuda-drivers
   become: true
   ansible.builtin.apt:
     name:
-      - cuda-cudart-dev-{{ cuda__dash_case_cuda_version.stdout }}
-      - cuda-command-line-tools-{{ cuda__dash_case_cuda_version.stdout }}
       - cuda-minimal-build-{{ cuda__dash_case_cuda_version.stdout }}
-      - cuda-libraries-dev-{{ cuda__dash_case_cuda_version.stdout }}
-      - cuda-nvml-dev-{{ cuda__dash_case_cuda_version.stdout }}
-      - cuda-nvprof-{{ cuda__dash_case_cuda_version.stdout }}
-      - libnpp-dev-{{ cuda__dash_case_cuda_version.stdout }}
-      - libcusparse-dev-{{ cuda__dash_case_cuda_version.stdout }}
-      - libcublas-dev-{{ cuda__dash_case_cuda_version.stdout }}
-      - libnccl-dev
+      - libcusparse-{{ cuda__dash_case_cuda_version.stdout }}
+      - libcublas-{{ cuda__dash_case_cuda_version.stdout }}
+      - libcurand-{{ cuda__dash_case_cuda_version.stdout }}
     update_cache: true
+  when: install_devel == 'N'
+
+- name: Install extra CUDA libraries for x86_64
+  become: true
+  ansible.builtin.apt:
+    name:
+      - cuda-nvprof-{{ cuda__dash_case_cuda_version.stdout }}
+    update_cache: true
+  when: cuda_architecture.stdout == "x86_64"
 
 - name: Install cuda-drivers
   become: true
@@ -63,7 +63,7 @@
     name:
       - cuda-drivers
     update_cache: true
-  when: install_cuda_drivers | bool
+  when: cuda_install_drivers | bool
 
 - name: Add PATH to .bashrc
   ansible.builtin.lineinfile:
@@ -80,3 +80,65 @@
     state: present
     create: true
     mode: 0644
+
+- name: Create Vulkan directory
+  become: true
+  ansible.builtin.file:
+    path: /etc/vulkan/icd.d
+    state: directory
+    mode: "0755"
+
+- name: Create OpenGL directory
+  become: true
+  ansible.builtin.file:
+    path: /etc/glvnd/egl_vendor.d
+    state: directory
+    mode: "0755"
+
+- name: Create OpenCL directory
+  become: true
+  ansible.builtin.file:
+    path: /etc/OpenCL/vendors
+    state: directory
+    mode: "0755"
+
+- name: Register Vulkan GPU vendors
+  become: true
+  ansible.builtin.get_url:
+    url: https://gitlab.com/nvidia/container-images/vulkan/raw/dc389b0445c788901fda1d85be96fd1cb9410164/nvidia_icd.json
+    dest: /etc/vulkan/icd.d/nvidia_icd.json
+    mode: "0644"
+
+- name: Set permissions for Vulkan GPU vendors
+  become: true
+  ansible.builtin.file:
+    path: /etc/vulkan/icd.d/nvidia_icd.json
+    mode: "0644"
+
+- name: Register OpenGL GPU vendors
+  become: true
+  ansible.builtin.get_url:
+    url: https://gitlab.com/nvidia/container-images/opengl/raw/5191cf205d3e4bb1150091f9464499b076104354/glvnd/runtime/10_nvidia.json
+    dest: /etc/glvnd/egl_vendor.d/10_nvidia.json
+    mode: "0644"
+
+- name: Set permissions for OpenGL GPU vendors
+  become: true
+  ansible.builtin.file:
+    path: /etc/glvnd/egl_vendor.d/10_nvidia.json
+    mode: "0644"
+
+- name: Register OpenCL GPU vendors
+  become: true
+  ansible.builtin.file:
+    path: /etc/OpenCL/vendors/nvidia.icd
+    state: touch
+    mode: "0644"
+
+- name: Set permissions for OpenCL GPU vendors
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/OpenCL/vendors/nvidia.icd
+    line: libnvidia-opencl.so.1
+    create: true
+    mode: "0644"
