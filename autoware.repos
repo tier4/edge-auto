@@ -2,27 +2,27 @@ repositories:
   autoware.universe:
     type: git
     url: https://github.com/autowarefoundation/autoware.universe.git
-    version: main
+    version: 250562d8bc5234296f6a0eae0d48392b86167b4e
   autoware_common:
     type: git
     url: https://github.com/autowarefoundation/autoware_common.git
-    version: main
+    version: 6752ca71a985c3bd39ab9cc23a3695930f0a6e29
   autoware_msgs:
     type: git
     url: https://github.com/autowarefoundation/autoware_msgs.git
-    version: main
+    version: 4c3a1939520cd8ac9d05b0addf7286a0534de024
   autoware_adapi_msgs:
     type: git
     url: https://github.com/autowarefoundation/autoware_adapi_msgs.git
-    version: main
+    version: 9bb74bd5006f7e3901ecd0368c19c30d047482f4
   autoware_auto_msgs:
     type: git
     url: https://github.com/tier4/autoware_auto_msgs.git
-    version: tier4/main
+    version: 1e8b6d234e2690c9da386f006bb60835cdccddfd
   tier4_autoware_msgs:
     type: git
     url: https://github.com/tier4/tier4_autoware_msgs.git
-    version: tier4/universe
+    version: 5cf56e7c1f1156c0067108a83806a22e42120d1b
   launcher:
     type: git
     url: https://github.com/tier4/edge_auto_launch.git
@@ -38,11 +38,11 @@ repositories:
   nebula:
     type: git
     url: https://github.com/tier4/nebula.git
-    version: main
+    version: d9aaefc9a4c06f6dae86cd7ef22f6353f1379e4f
   transport_drivers:
     type: git
     url: https://github.com/MapIV/transport_drivers.git
-    version: boost
+    version: e7e25ed52b58b3556fa8b0f75a87f7c5d42fbef1
   lidartag:
     type: git
     url: https://github.com/tier4/LiDARTag.git
