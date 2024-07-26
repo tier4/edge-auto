@@ -9,6 +9,7 @@ SCRIPT_DIR=$(readlink -f "$(dirname "$0")")
 
 # Parse arguments
 args=()
+option_data_dir="$HOME/autoware_data"
 while [ "$1" != "" ]; do
     case "$1" in
     -y)
@@ -30,6 +31,11 @@ while [ "$1" != "" ]; do
     --runtime)
         # Disable installation dev package of role 'cuda' and 'tensorrt'.
         option_runtime=true
+        ;;
+    --data-dir)
+        # Set data directory
+        option_data_dir="$2"
+        shift
         ;;
     *)
         args+=("$1")
@@ -90,6 +96,8 @@ else
     ansible_args+=("--extra-vars" "install_devel=true")
 fi
 
+ansible_args+=("--extra-vars" "data_dir=$option_data_dir")
+
 # Load env
 source "$SCRIPT_DIR/amd64.env"
 if [ "$(uname -m)" = "aarch64" ]; then
@@ -125,6 +133,9 @@ if ! (python3 -m pipx --version >/dev/null 2>&1); then
     sudo apt-get -y update
     python3 -m pip install --user pipx
 fi
+
+# Upgrade apt packages
+sudo apt-get upgrade -y
 
 # Install ansible
 python3 -m pipx ensurepath
