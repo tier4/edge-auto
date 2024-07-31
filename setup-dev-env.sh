@@ -89,11 +89,11 @@ fi
 
 # Check installation of dev package
 if [ "$option_runtime" = "true" ]; then
-    ansible_args+=("--extra-vars" "install_devel=false")
+    ansible_args+=("--extra-vars" "install_devel=n")
     # ROS installation type, default "desktop"
     ansible_args+=("--extra-vars" "installation_type=ros-base")
 else
-    ansible_args+=("--extra-vars" "install_devel=true")
+    ansible_args+=("--extra-vars" "install_devel=y")
 fi
 
 ansible_args+=("--extra-vars" "data_dir=$option_data_dir")
