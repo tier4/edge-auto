@@ -1,32 +1,8 @@
 repositories:
-  autoware.universe:
-    type: git
-    url: https://github.com/autowarefoundation/autoware.universe.git
-    version: main
-  autoware_common:
-    type: git
-    url: https://github.com/autowarefoundation/autoware_common.git
-    version: main
-  autoware_msgs:
-    type: git
-    url: https://github.com/autowarefoundation/autoware_msgs.git
-    version: main
-  autoware_adapi_msgs:
-    type: git
-    url: https://github.com/autowarefoundation/autoware_adapi_msgs.git
-    version: main
-  autoware_auto_msgs:
-    type: git
-    url: https://github.com/tier4/autoware_auto_msgs.git
-    version: tier4/main
-  tier4_autoware_msgs:
-    type: git
-    url: https://github.com/tier4/tier4_autoware_msgs.git
-    version: tier4/universe
   launcher:
     type: git
-    url: https://github.com/tier4/edge_auto_launch.git
-    version: main
+    url: https://github.com/MapIV/edge_auto_launch.git
+    version: fix/autoware
   individual_params:
     type: git
     url: https://github.com/tier4/edge_auto_individual_params.git
@@ -34,15 +10,84 @@ repositories:
   calibration_tools:
     type: git
     url: https://github.com/tier4/CalibrationTools.git
+    version: feature/edge_auto
+  core/autoware_msgs:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_msgs.git
+    version: 1.1.0
+  core/autoware_adapi_msgs:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_adapi_msgs.git
+    version: 1.3.0
+  core/autoware_internal_msgs:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_internal_msgs.git
+    version: 1.1.0
+  core/autoware_common:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_common.git
+    version: remove-autoware-cmake-utils
+  core/autoware_cmake:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_cmake.git
+    version: 1.0.0
+  core/autoware_utils:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_utils.git
+    version: 1.0.0
+  core/autoware_lanelet2_extension:
+    type: git
+    url: https://github.com/autowarefoundation/autoware_lanelet2_extension.git
+    version: 0.5.0
+  core/autoware.core:
+    type: git
+    url: https://github.com/autowarefoundation/autoware.core.git
+    version: main
+  core/external/autoware_auto_msgs:
+    type: git
+    url: https://github.com/tier4/autoware_auto_msgs.git
+    version: tier4/main
+  universe/autoware.universe:
+    type: git
+    url: https://github.com/MapIV/autowarefoundation.universe.git
+    version: fix/cpp17_namespaces
+  universe/external/tier4_ad_api_adaptor:
+    type: git
+    url: https://github.com/tier4/tier4_ad_api_adaptor.git
+    version: c2f6a89413feb8e57581b96220655ce29c0bb34b
+  universe/external/tier4_autoware_msgs:
+    type: git
+    url: https://github.com/tier4/tier4_autoware_msgs.git
     version: tier4/universe
-  nebula:
+  universe/external/morai_msgs:
+    type: git
+    url: https://github.com/MORAI-Autonomous/MORAI-ROS2_morai_msgs.git
+    version: main
+  universe/external/mussp:
+    type: git
+    url: https://github.com/tier4/muSSP.git
+    version: tier4/main
+  universe/external/ndt_omp:
+    type: git
+    url: https://github.com/tier4/ndt_omp.git
+    version: tier4/main
+  universe/external/ament_cmake: # TODO(mitsudome-r): remove when https://github.com/ament/ament_cmake/pull/448 is merged
+    type: git
+    url: https://github.com/autowarefoundation/ament_cmake.git
+    version: feat/faster_ament_libraries_deduplicate
+  universe/external/glog:
+    type: git
+    url: https://github.com/tier4/glog.git
+    version: v0.6.0_t4-ros
+  sensor_component/external/nebula:
     type: git
     url: https://github.com/tier4/nebula.git
-    version: main
-  transport_drivers:
+    version: d9aaefc9a4c06f6dae86cd7ef22f6353f1379e4f
+  sensor_component/external/transport_drivers:
     type: git
     url: https://github.com/MapIV/transport_drivers.git
-    version: boost
+    version: e7e25ed52b58b3556fa8b0f75a87f7c5d42fbef1
+  
   lidartag:
     type: git
     url: https://github.com/tier4/LiDARTag.git
@@ -63,7 +108,10 @@ repositories:
     type: git
     url: https://github.com/Box-Robotics/ros2_numpy.git
     version: humble
-  image_pipeline:
+
+  eagleye:
     type: git
-    url: https://github.com/tier4/image_pipeline.git
-    version: 47964112293eb19f9f57254b2e6b68706954cc63
+    url: https://github.com/MapIV/eagleye/tree/autoware-main
+    version: autoware-main
+
+
