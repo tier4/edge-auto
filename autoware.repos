@@ -1,12 +1,12 @@
 repositories:
   launcher:
     type: git
-    url: https://github.com/MapIV/edge_auto_launch.git
-    version: fix/autoware
+    url: https://github.com/tier4/edge_auto_launch.git
+    version: 3ac46a53702046330e87120ebdfc91dc517aaccd
   individual_params:
     type: git
     url: https://github.com/tier4/edge_auto_individual_params.git
-    version: main
+    version: 5551281f0780d8fd209fb1808104ba4ba99a35d7
   calibration_tools:
     type: git
     url: https://github.com/tier4/CalibrationTools.git
@@ -26,7 +26,7 @@ repositories:
   core/autoware_common:
     type: git
     url: https://github.com/autowarefoundation/autoware_common.git
-    version: remove-autoware-cmake-utils
+    version: 6752ca71a985c3bd39ab9cc23a3695930f0a6e29 # remove-autoware-cmake-utils
   core/autoware_cmake:
     type: git
     url: https://github.com/autowarefoundation/autoware_cmake.git
@@ -42,15 +42,15 @@ repositories:
   core/autoware.core:
     type: git
     url: https://github.com/autowarefoundation/autoware.core.git
-    version: main
+    version: d02c63cc555046f6a3d1feb44fdb94c780c3753c
   core/external/autoware_auto_msgs:
     type: git
     url: https://github.com/tier4/autoware_auto_msgs.git
-    version: tier4/main
+    version: 624aae9feb142eb2a4e16069ed06bf4050ccc3ea
   universe/autoware.universe:
     type: git
     url: https://github.com/MapIV/autowarefoundation.universe.git
-    version: fix/cpp17_namespaces
+    version: a60637702103d9cdac3976d4a5eaf6ed35b418c9
   universe/external/tier4_ad_api_adaptor:
     type: git
     url: https://github.com/tier4/tier4_ad_api_adaptor.git
@@ -58,27 +58,27 @@ repositories:
   universe/external/tier4_autoware_msgs:
     type: git
     url: https://github.com/tier4/tier4_autoware_msgs.git
-    version: tier4/universe
+    version: 12504f69041fb8c895ffb5625da63be2ea69da4b
   universe/external/morai_msgs:
     type: git
     url: https://github.com/MORAI-Autonomous/MORAI-ROS2_morai_msgs.git
-    version: main
+    version: f125985fcec0a3e79188df0bd645f4649db04d76
   universe/external/mussp:
     type: git
     url: https://github.com/tier4/muSSP.git
-    version: tier4/main
+    version: c79e98fd5e658f4f90c06d93472faa977bc873b9
   universe/external/ndt_omp:
     type: git
     url: https://github.com/tier4/ndt_omp.git
-    version: tier4/main
+    version: e32ec1b9a3b887cc86e5559686184576d90e0efb
   universe/external/ament_cmake: # TODO(mitsudome-r): remove when https://github.com/ament/ament_cmake/pull/448 is merged
     type: git
     url: https://github.com/autowarefoundation/ament_cmake.git
-    version: feat/faster_ament_libraries_deduplicate
+    version: aa498007d47198815fa7cba25f9dfeac77e09ca3
   universe/external/glog:
     type: git
     url: https://github.com/tier4/glog.git
-    version: v0.6.0_t4-ros
+    version: ea36766fdc2ac8e8c8e3ac988ae69acd6d09bb30v0.6.0_t4-ros
   sensor_component/external/nebula:
     type: git
     url: https://github.com/tier4/nebula.git
@@ -87,15 +87,15 @@ repositories:
     type: git
     url: https://github.com/MapIV/transport_drivers.git
     version: e7e25ed52b58b3556fa8b0f75a87f7c5d42fbef1
-  
+
   lidartag:
     type: git
     url: https://github.com/tier4/LiDARTag.git
-    version: humble
+    version: 2e8526f549a662065a716edffc435436c257ac25 # humble
   lidartag_msgs:
     type: git
     url: https://github.com/tier4/LiDARTag_msgs.git
-    version: tier4/universe
+    version: a8e94d97270969aed14c5d83729068865454a9f9 # tier4/universe
   apriltag_msgs:
     type: git
     url: https://github.com/christianrauch/apriltag_msgs.git
@@ -103,11 +103,11 @@ repositories:
   apriltag_ros:
     type: git
     url: https://github.com/christianrauch/apriltag_ros.git
-    version: e814e9e5d5f1bfb60a4aa685d30977c632bbc540
+    version: 3.0.0
   ros2_numpy:
     type: git
     url: https://github.com/Box-Robotics/ros2_numpy.git
-    version: humble
+    version: 974a491e66c5bf617cd4a28848b5584a58c43f5a # humble
 
   eagleye:
     type: git
