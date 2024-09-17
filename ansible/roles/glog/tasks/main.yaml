@@ -1,0 +1,29 @@
+- name: Purge the old glog
+  apt:
+    name: libgoogle-glog-dev
+    purge: 'yes'
+    state: absent
+  become: 'yes'
+
+- name: Clone glog source code
+  git:
+    repo: https://github.com/google/glog.git
+    dest: /tmp/glog
+    version: 45f99f5e1a03cc4d3d845a3bd31dcad5b3619ed0
+
+- name: Configure the build tree
+  shell: cmake -S . -B build -G "Unix Makefiles"
+  args:
+    chdir: /tmp/glog
+
+- name: Compile the project
+  shell: cmake --build build
+  args:
+    chdir: /tmp/glog
+
+- name: Install the built files
+  shell: cmake --build build --target install
+  args:
+    chdir: /tmp/glog
+  become: 'yes'
+

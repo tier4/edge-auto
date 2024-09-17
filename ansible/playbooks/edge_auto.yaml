@@ -9,6 +9,16 @@
         [Warning] Some Autoware components depend on the CUDA, cuDNN and TensorRT NVIDIA libraries which have end-user license agreements that should be reviewed before installation.
         Install NVIDIA libraries? [y/N]
       private: false
+    - name: prompt_download_artifacts
+      prompt: |-
+        [Warning] Should the ONNX model files and other artifacts be downloaded alongside setting up the development environment.
+        Download artifacts? [y/N]
+      private: false
+    - name: install_devel
+      prompt: |-
+        [Warning] Do you want to install recommended development tools for Autoware? [y/N]
+      private: false
+      default: y
     - name: prompt_configure_network
       prompt: |-
         [Warning] Do you want to configure the network? This configuration may overwrite the IP address of the specific network interface [y/N]
@@ -35,26 +45,30 @@
           [Warning] Skipping installation of NVIDIA libraries. Please manually install them if you plan to use any dependent components.
       when: prompt_install_nvidia != 'y'
   roles:
-    # Core
-    - role: autoware.dev_env.autoware_core
-    - role: autoware.dev_env.ccache
-      when: install_devel == 'true'
-    - role: autoware.dev_env.plotjuggler
-    - role: autoware.dev_env.pre_commit
-      when: install_devel == 'true'
+    # Autoware base dependencies
     - role: autoware.dev_env.ros2
     - role: autoware.dev_env.ros2_dev_tools
-    # - role: autoware.dev_env.rmw_implementation
+    - role: autoware.dev_env.rmw_implementation
+    - role: autoware.dev_env.gdown
+    - role: autoware.dev_env.build_tools
+    - role: autoware.dev_env.glog
 
-    # Universe
-    - role: autoware.dev_env.autoware_universe
+    # Autoware module dependencies
+    - role: autoware.dev_env.geographiclib
     - role: autoware.dev_env.cuda
-      when: prompt_install_nvidia == 'y' and install_devel == 'true'
+      when: prompt_install_nvidia == 'y'
     - role: autoware.dev_env.pacmod
       when: rosdistro != 'rolling'
     - role: autoware.dev_env.tensorrt
       when: prompt_install_nvidia == 'y'
-    - role: autoware.dev_env.git_lfs
+
+    # Autoware devel dependencies
+    - role: autoware.dev_env.dev_tools
+      when: install_devel == 'y'
+
+    # ONNX files and other artifacts
+    - role: autoware.dev_env.artifacts
+      when: prompt_download_artifacts == 'y'
 
     # Edge.Auto
     - role: autoware.dev_env.ros2_domain_id
