@@ -82,11 +82,11 @@ repositories:
   sensor_component/external/nebula:
     type: git
     url: https://github.com/tier4/nebula.git
-    version: d9aaefc9a4c06f6dae86cd7ef22f6353f1379e4f
+    version: v0.0.1
   sensor_component/external/transport_drivers:
     type: git
-    url: https://github.com/MapIV/transport_drivers.git
-    version: e7e25ed52b58b3556fa8b0f75a87f7c5d42fbef1
+    url: https://github.com/autowarefoundation/transport_drivers.git
+    version: 39ebd8afe1bb9760a6cd6272e428468480f6de90
 
   lidartag:
     type: git
