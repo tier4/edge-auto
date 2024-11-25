@@ -2,13 +2,13 @@
 
 Setup for both x86-based and Jetson-based ECUs.
 
-> **Note**
+> [!NOTE]
 >
 > Internet connection is required in this step.
 
 ## 2-1. x86-based ECU
 
-> **Warning**
+> [!Warning]
 >
 > Network settings are automatically updated.
 >
@@ -65,9 +65,34 @@ Summary: 66 packages finished [6.85s]
   2 packages had stderr output: extrinsic_interactive_calibrator intrinsic_camera_calibrator
 ```
 
+### Connection Test For LiDAR
+
+Run the following command to check the connection to the LiDAR and ensure the setup is successful.
+
+```sh
+ping 192.168.1.201
+```
+
+If the installation is successful, you will get the following results on `terminal2`:
+
+```sh
+PING 192.168.1.201 (192.168.1.201) 56(84) bytes of data.
+64 bytes from 192.168.1.201: icmp_seq=1 ttl=64 time=0.253 ms
+64 bytes from 192.168.1.201: icmp_seq=2 ttl=64 time=0.398 ms
+64 bytes from 192.168.1.201: icmp_seq=3 ttl=64 time=0.525 ms
+64 bytes from 192.168.1.201: icmp_seq=4 ttl=64 time=0.447 ms
+64 bytes from 192.168.1.201: icmp_seq=5 ttl=64 time=0.389 ms
+64 bytes from 192.168.1.201: icmp_seq=6 ttl=64 time=0.360 ms
+64 bytes from 192.168.1.201: icmp_seq=7 ttl=64 time=0.285 ms
+```
+
+Please see the official tutorial for each LiDAR you are using for more information.
+
+- [Hesai Lidar Tutorial #2: Connecting Lidar and Configuring Internet](https://m.youtube.com/watch?v=GaJ7h0EEkhI)
+
 ## 2-2. Jetson-based ECU
 
-> **Note**
+> [!NOTE]
 >
 > This following steps can be performed from your x86-based ECU via ssh.
 
@@ -84,7 +109,7 @@ You can install the dependencies using the provided ansible script.
 During the installation process, you will be asked if you want to install the TIER IV camera driver.
 If you already have the driver installed and want to skip this step, please type `N` to continue.
 
-> **Note**
+> [!NOTE]
 >
 > `setup-dev-env.sh` script may take several hours.
 
@@ -124,6 +149,53 @@ Build your ROS workspace.
 ./build.sh
 ```
 
+### Connection Test　For camera1(C1) and camera2(C1)
+
+Run the following command to check the connection to the camera and ensure the setup is successful.
+
+- camera1
+  - `Terminal1`:
+
+    ```sh
+    ros2 launch sensor_trigger sensor_trigger.launch.xml gpio:=51
+    ```
+
+  - `Terminal2`:
+
+    ```sh
+    v4l2-ctl --stream-mmap -d /dev/video0
+    ```
+
+- camera2
+  - `Terminal1`:
+
+    ```sh
+    ros2 launch sensor_trigger sensor_trigger.launch.xml gpio:=52
+    ```
+
+  - `Terminal2`:
+
+    ```sh
+    v4l2-ctl --stream-mmap -d /dev/video1
+    ```
+
+If the installation is successful, you will get the following results on `terminal2`:
+
+```sh
+$ v4l2-ctl --stream-mmap -d /dev/video0
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 29.99 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 29.99 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
+```
+
+
 ## (Optional) Update your workspace
 
 If you want to update cloned repositories, use the following command.
@@ -135,7 +207,7 @@ vcs pull src
 
 ## (Optional) Modify camera exposure timing
 
-> **Note**
+> [!NOTE]
 >
 > On the sample system introduced in [1.Hardware setup](01_hardware_setup.md) step, this doesn't need to be changed.
 
