@@ -73,7 +73,7 @@ Run the following command to check the connection to the LiDAR and ensure the se
 ping 192.168.1.201
 ```
 
-If the installation is successful, you will get the following results on `terminal2`:
+If the installation is successful, you will get the following results on terminal:
 
 ```sh
 PING 192.168.1.201 (192.168.1.201) 56(84) bytes of data.
