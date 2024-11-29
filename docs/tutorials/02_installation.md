@@ -76,9 +76,17 @@ Summary: 66 packages finished [6.85s]
 As a first step, clone `tier4/edge-auto-jetson` and move to the directory.
 
 ```sh
-git clone https://github.com/tier4/edge-auto-jetson.git
+git clone https://github.com/tier4/edge-auto-jetson.git -b release/RQX-58G
 cd edge-auto-jetson
 ```
+
+> **Note**
+>
+> If you would like to contribute to the development, please clone the latest version of the source code from the main branch.
+> ```sh
+> git clone https://github.com/tier4/edge-auto-jetson.git
+> cd edge-auto-jetson
+> ```
 
 You can install the dependencies using the provided ansible script.
 During the installation process, you will be asked if you want to install the TIER IV camera driver.
