@@ -69,26 +69,21 @@ Summary: 66 packages finished [6.85s]
 
 Run the following command to check the connection to the LiDAR and ensure the setup is successful.
 
-```sh
-ping 192.168.1.201
-```
-
-If the installation is successful, you will get the following results on terminal:
+> [!NOTE]
+>
+> Please select `PandarXT32` part from this [page](https://tier4.github.io/nebula/supported_sensors/) depending on the LiDAR you are using
 
 ```sh
-PING 192.168.1.201 (192.168.1.201) 56(84) bytes of data.
-64 bytes from 192.168.1.201: icmp_seq=1 ttl=64 time=0.253 ms
-64 bytes from 192.168.1.201: icmp_seq=2 ttl=64 time=0.398 ms
-64 bytes from 192.168.1.201: icmp_seq=3 ttl=64 time=0.525 ms
-64 bytes from 192.168.1.201: icmp_seq=4 ttl=64 time=0.447 ms
-64 bytes from 192.168.1.201: icmp_seq=5 ttl=64 time=0.389 ms
-64 bytes from 192.168.1.201: icmp_seq=6 ttl=64 time=0.360 ms
-64 bytes from 192.168.1.201: icmp_seq=7 ttl=64 time=0.285 ms
+test.sh PandarXT32
 ```
 
-Please see the official tutorial for each LiDAR you are using for more information.
+If the installation is successfuly, you will get the following results.
 
-- [Hesai Lidar Tutorial #2: Connecting Lidar and Configuring Internet](https://m.youtube.com/watch?v=GaJ7h0EEkhI)
+```sh
+: (many outputs)
+:
+[RESULT] Success.
+```
 
 ## 2-2. Jetson-based ECU
 
@@ -153,46 +148,16 @@ Build your ROS workspace.
 
 Run the following command to check the connection to the camera and ensure the setup is successful.
 
-- camera1
-  - `Terminal1`:
+```sh
+test.sh
+```
 
-    ```sh
-    ros2 launch sensor_trigger sensor_trigger.launch.xml gpio:=51
-    ```
-
-  - `Terminal2`:
-
-    ```sh
-    v4l2-ctl --stream-mmap -d /dev/video0
-    ```
-
-- camera2
-  - `Terminal1`:
-
-    ```sh
-    ros2 launch sensor_trigger sensor_trigger.launch.xml gpio:=52
-    ```
-
-  - `Terminal2`:
-
-    ```sh
-    v4l2-ctl --stream-mmap -d /dev/video1
-    ```
-
-If the installation is successful, you will get the following results on `terminal2`:
+If the installation is successfuly, you will get the following results.
 
 ```sh
-$ v4l2-ctl --stream-mmap -d /dev/video0
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 29.99 fps
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 29.99 fps
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 30.00 fps
+: (many outputs)
+:
+[RESULT] Success.
 ```
 
 
