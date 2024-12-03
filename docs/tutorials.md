@@ -1,5 +1,8 @@
 # Tutorials
 
+> [!NOTE]  
+> For detailed software, hardware, trouble shooting information, please visit **[Edge.Auto documentation](https://tier4.github.io/edge-auto-docs/index.html)** page or **[FAQ](https://tier4.github.io/edge-auto-docs/faqs/index.html)** page
+
 This tutorial will show you step-by-step instructions on how to use samples included in Edge.Auto.
 
 1. [Hardware setup](tutorials/01_hardware_setup.md)
@@ -7,3 +10,4 @@ This tutorial will show you step-by-step instructions on how to use samples incl
 3. [Sensor calibration](tutorials/03_sensor_calibration.md)
 4. [Launch application](tutorials/04_launch_application.md)
 5. [Trouble shooting](tutorials/05_trouble_shooting.md)
+
