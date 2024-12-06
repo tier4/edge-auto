@@ -4,6 +4,10 @@ As a first step, prepare your hardwares including Sensor and ECU.
 
 ## Sample hardware configuration
 
+> [!WARNING]
+>
+> HESAI AT128 is deprecated because it has been discontinued.
+
 This following hardware configuration is used throughout this tutorial.
 
 - ECU setup
@@ -12,10 +16,10 @@ This following hardware configuration is used throughout this tutorial.
 - Sensor setup
   - Sample configuration 1
     - Camera: TIER IV Automotive HDR Camera C1 (x2)
-    - LiDAR: HESAI AT128 (x1)
+    - LiDAR: HESAI Pandar XT32 (x1)
   - Sample configuration 2
     - Camera: TIER IV Automotive HDR Camera C1 (x2)
-    - LiDAR: HESAI Pandar XT32 (x1)
+    - LiDAR: HESAI AT128 (x1)
 
 ### Connection diagram
 

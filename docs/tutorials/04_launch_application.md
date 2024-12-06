@@ -40,9 +40,9 @@ it is recommended to adjust this value according to your actual sensor setup to 
 cd edge-auto
 source install/setup.bash
 
-ros2 launch edge_auto_launch perception_at128_sample.launch.xml sensor_height:=[sensor height from the ground]
-## or
 ros2 launch edge_auto_launch perception_xt32_sample.launch.xml sensor_height:=[sensor height from the ground]
+## or
+ros2 launch edge_auto_launch perception_at128_sample.launch.xml sensor_height:=[sensor height from the ground]
 ```
 
 This sample mainly leverages [pointcloud_preprocessor](https://github.com/autowarefoundation/autoware.universe/tree/main/sensing/pointcloud_preprocessor), [centerpoint](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/lidar_centerpoint), and [image_projection_based_fusion](https://github.com/autowarefoundation/autoware.universe/tree/main/perception/image_projection_based_fusion) packages
@@ -51,7 +51,7 @@ See the READMEs of these packages for more detail.
 
 In addition to the perception stack, this sample also launches viewers so that users can check perception results visually.
 
-As an example, the following picture shows the perception results in the case of a system configuration that consists of one AT128 and one C1 camera.
+As an example, the following picture shows the perception results.
 
 ![Example: perception result](../sample.png "Example: perception result")
 

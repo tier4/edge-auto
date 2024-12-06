@@ -96,9 +96,9 @@ for detailed operation on the tool.
 cd edge-auto
 source install/setup.bash
 
-ros2 launch edge_auto_launch calibration_extrinsic_at128_sample.launch.xml
-## or
 ros2 launch edge_auto_launch calibration_extrinsic_xt32_sample.launch.xml
+## or
+ros2 launch edge_auto_launch calibration_extrinsic_at128_sample.launch.xml
 ```
 
 After executing the above launch file, two windows will be appear like below:
@@ -115,6 +115,6 @@ After calculating extrinsic parameters, put the result in the appropriate files 
 ```sh
 edge-auto/src/individual_params/individual_params/config/
 └── default
-    ├── at128_to_camera0.json # <- replace this file with your calculated results
-    └── at128_to_camera1.json # <- replace this file with your calculated results
+    ├── xt32_to_camera0.json # <- replace this file with your calculated results
+    └── xt32_to_camera1.json # <- replace this file with your calculated results
 ```
