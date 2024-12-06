@@ -6,7 +6,7 @@ As a first step, prepare your hardwares including Sensor and ECU.
 
 > [!WARNING]
 >
-> AT128 has been discontinued. Successor model **AT128P** is not officially supported by Nebula and is therefore deprecated.
+> HESAI AT128 is deprecated because it has been discontinued.
 
 This following hardware configuration is used throughout this tutorial.
 
