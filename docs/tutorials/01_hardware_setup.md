@@ -4,10 +4,6 @@ As a first step, prepare your hardwares including Sensor and ECU.
 
 ## Sample hardware configuration
 
-> [!WARNING]
->
-> HESAI AT128 is deprecated because it has been discontinued.
-
 This following hardware configuration is used throughout this tutorial.
 
 - ECU setup
