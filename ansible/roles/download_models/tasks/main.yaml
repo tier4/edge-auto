@@ -1,0 +1,44 @@
+- name: Create data directory
+  become: true
+  ansible.builtin.file:
+    path: "{{ data_dir }}"
+    state: directory
+
+- name: Create lidar_centerpoint directory inside {{ data_dir }}
+  become: true
+  ansible.builtin.file:
+    path: "{{ data_dir }}/lidar_centerpoint"
+    mode: "755"
+    state: directory
+
+- name: Download lidar_centerpoint/pts_voxel_encoder_centerpoint.onnx
+  become: true
+  ansible.builtin.get_url:
+    url: https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint.onnx
+    dest: "{{ data_dir }}/lidar_centerpoint/pts_voxel_encoder_centerpoint.onnx"
+    mode: "644"
+    checksum: sha256:dc1a876580d86ee7a341d543f8ade2ede7f43bd032dc5b44155b1f0175405764
+
+- name: Download lidar_centerpoint/pts_backbone_neck_head_centerpoint.onnx
+  become: true
+  ansible.builtin.get_url:
+    url: https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint.onnx
+    dest: "{{ data_dir }}/lidar_centerpoint/pts_backbone_neck_head_centerpoint.onnx"
+    mode: "644"
+    checksum: sha256:3fe7e128955646740c41a25be0c8f141d5a94594fe79d7405fe2a859e391542e
+
+- name: Download lidar_centerpoint/pts_voxel_encoder_centerpoint_tiny.onnx
+  become: true
+  ansible.builtin.get_url:
+    url: https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_voxel_encoder_centerpoint_tiny.onnx
+    dest: "{{ data_dir }}/lidar_centerpoint/pts_voxel_encoder_centerpoint_tiny.onnx"
+    mode: "644"
+    checksum: sha256:2c53465715c1fd2e9dc5727ef3fca74f4cdf0538f74286b0946e219d0ca5693b
+
+- name: Download lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx
+  become: true
+  ansible.builtin.get_url:
+    url: https://awf.ml.dev.web.auto/perception/models/centerpoint/v2/pts_backbone_neck_head_centerpoint_tiny.onnx
+    dest: "{{ data_dir }}/lidar_centerpoint/pts_backbone_neck_head_centerpoint_tiny.onnx"
+    mode: "644"
+    checksum: md5:e4658325b70222f7c3637fe00e586b82
